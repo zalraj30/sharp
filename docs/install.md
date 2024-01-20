@@ -41,7 +41,7 @@ deno run --allow-ffi ...
 
 Ready-compiled sharp and libvips binaries are provided for use on the most common platforms:
 
-* macOS x64 (>= 10.13)
+* macOS x64 (>= 10.15)
 * macOS ARM64
 * Linux ARM (glibc >= 2.28)
 * Linux ARM64 (glibc >= 2.26, musl >= 1.2.2)
@@ -108,7 +108,7 @@ This module will be compiled from source at `npm install` time when:
 
 Building from source requires:
 
-* C++11 compiler
+* C++17 compiler
 * [node-addon-api](https://www.npmjs.com/package/node-addon-api) version 7+
 * [node-gyp](https://github.com/nodejs/node-gyp#installation) version 9+ and its dependencies
 

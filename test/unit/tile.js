@@ -485,7 +485,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             fs.stat(path.join(directory, 'ImageProperties.xml'), function (err, stat) {
               if (err) throw err;
               assert.strictEqual(true, stat.isFile());
@@ -511,7 +511,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             assertZoomifyTiles(directory, 256, 1, done);
           });
       });
@@ -532,7 +532,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             assertZoomifyTiles(directory, 256, 5, done);
           });
       });
@@ -553,7 +553,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             assertZoomifyTiles(directory, 256, 13, done);
           });
       });
@@ -577,7 +577,7 @@ describe('Tile', function () {
             assert.strictEqual(2048, info.width);
             assert.strictEqual(1536, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             assertZoomifyTiles(directory, 256, 4, done);
           });
       });
@@ -596,7 +596,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             fs.stat(path.join(directory, '0', '0', '0.jpg'), function (err, stat) {
               if (err) throw err;
               assert.strictEqual(true, stat.isFile());
@@ -623,7 +623,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             const sample = path.join(directory, '0', '0', '0.jpg');
             sharp(sample).metadata(function (err, metadata) {
               if (err) throw err;
@@ -660,7 +660,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             const sample = path.join(directory, '0', '0', '0.png');
             sharp(sample).metadata(function (err, metadata) {
               if (err) throw err;
@@ -698,7 +698,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             const sample = path.join(directory, '0', '0', '0.webp');
             sharp(sample).metadata(function (err, metadata) {
               if (err) throw err;
@@ -734,8 +734,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
-
+            assert.strictEqual(undefined, info.size);
             assertGoogleTiles(directory, 256, 1, done);
           });
       });
@@ -756,8 +755,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
-
+            assert.strictEqual(undefined, info.size);
             assertGoogleTiles(directory, 256, 5, done);
           });
       });
@@ -781,8 +779,7 @@ describe('Tile', function () {
             assert.strictEqual(2809, info.width);
             assert.strictEqual(2074, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
-
+            assert.strictEqual(undefined, info.size);
             assertGoogleTiles(directory, 256, 5, done);
           });
       });
@@ -802,7 +799,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             fixtures.assertSimilar(fixtures.expected('tile_centered.jpg'), fs.readFileSync(path.join(directory, '0', '0', '0.jpg')), done);
           });
       });
@@ -822,7 +819,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             fixtures.assertSimilar(fixtures.expected('tile_centered.jpg'), fs.readFileSync(path.join(directory, '0', '0', '0.jpg')), done);
           });
       });
@@ -844,7 +841,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             const infoJson = require(path.join(directory, 'info.json'));
             assert.strictEqual('http://iiif.io/api/image/2/context.json', infoJson['@context']);
             assert.strictEqual(`${id}/${name}`, infoJson['@id']);
@@ -874,7 +871,7 @@ describe('Tile', function () {
             assert.strictEqual(2725, info.width);
             assert.strictEqual(2225, info.height);
             assert.strictEqual(3, info.channels);
-            assert.strictEqual('number', typeof info.size);
+            assert.strictEqual(undefined, info.size);
             const infoJson = require(path.join(directory, 'info.json'));
             assert.strictEqual('http://iiif.io/api/image/3/context.json', infoJson['@context']);
             assert.strictEqual('ImageService3', infoJson.type);
